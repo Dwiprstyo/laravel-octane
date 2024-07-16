@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  frankenphp:
+    build:
+      context: .
+    entrypoint: ["php", "artisan", "octane:frankenphp", "--max-requests=1000", "--workers=auto", "--host=0.0.0.0"]
+    ports:
+      - "8000:8000"
